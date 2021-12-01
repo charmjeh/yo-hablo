@@ -21,14 +21,11 @@
   align-items: center;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.footer .icon--heart {
+  animation: heartbeat 1.8s infinite;
 }
 
-.title a {
+.title strong {
   color: #0070f3;
   text-decoration: none;
 }
@@ -51,9 +48,10 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .code {
@@ -65,15 +63,9 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
 .card {
+  display: flex;
+  flex-direction: row;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -82,35 +74,48 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.select-box {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.native-select {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 28px 12px 15px;
+  appearance: none;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.native-select::-ms-expand {
+  display: none;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.select-box__arrow {
+  position: absolute;
+  top: 21px;
+  right: 11px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #999 transparent transparent transparent;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.button {
+  width: 100%;
+  margin-left: 10px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #4f9cf7;
+  padding: 0 15px;
+  font-weight: bold;
+  color: white;
 }

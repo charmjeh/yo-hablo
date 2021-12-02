@@ -23,7 +23,7 @@ const InputContainer: FC = () => {
       <SelectBox
         name="tense-select"
         options={tenseOptions}
-        isDisabled={false}
+        isDisabled={true}
       />
       <Button text="결과 보기" />
     </>

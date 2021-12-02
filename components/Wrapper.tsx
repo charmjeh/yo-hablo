@@ -17,7 +17,7 @@ const Wrapper = ({ children }: any) => {
         </h1>
 
         <p className={styles.description}>
-          어려운 스페인어 동사 변화를
+          헷갈리는 스페인어 동사 변화를
           <code className={styles.code}>Yo Hablo</code>
           와 함께 쉽게 확인해보세요
         </p>

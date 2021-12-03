@@ -1,6 +1,5 @@
 import _ from 'lodash'
-import React, { FC, useState } from 'react'
-import Link from 'next/link'
+import { FC, useState } from 'react'
 import {
   subjectOptions,
   verbOptions,
@@ -42,7 +41,7 @@ const SearchContainer: FC = () => {
     if (name === 'verb-select') setVerb(e.target.value)
     if (name === 'tense-select') setTense(e.target.value)
   }
-  
+
   const showResult = () => {
     const text = _.find(words, ({
       subject_value,
@@ -62,14 +61,14 @@ const SearchContainer: FC = () => {
   return (
     <>
       {searchSelects.map(({ name, value, options, isDisabled }: any) => 
-        <SelectBox
-          name={name}
-          value={value}
-          options={options}
-          isDisabled={isDisabled}
-          handleOnchange={(e: any) => handleOnchange(name, e)}
-          key={name}
-        />
+            <SelectBox
+              name={name}
+              value={value}
+              options={options}
+              isDisabled={isDisabled}
+              handleOnchange={(e: any) => handleOnchange(name, e)}
+              key={name}
+            />
       )}
       <Button
         to={keyword}

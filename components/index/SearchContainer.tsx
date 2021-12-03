@@ -1,10 +1,8 @@
-import _ from 'lodash'
 import { FC, useState } from 'react'
 import {
   subjectOptions,
   verbOptions,
   tenseOptions,
-  words
 } from '../../db.js';
 import SelectBox from '../SelectBox';
 import Button from '../Button';
@@ -13,7 +11,6 @@ const SearchContainer: FC = () => {
   const [subject, setSubject] = useState('yo');
   const [verb, setVerb] = useState('hablar');
   const [tense, setTense] = useState('indicative-present');
-  const [keyword, setKeyword] = useState('')
 
   const searchSelects = [
     {
@@ -42,38 +39,28 @@ const SearchContainer: FC = () => {
     if (name === 'tense-select') setTense(e.target.value)
   }
 
-  const showResult = () => {
-    const text = _.find(words, ({
-      subject_value,
-      verb_value,
-      tense_value
-    }) => {
-      return (
-        subject_value === subject &&
-        verb_value === verb &&
-        tense_value === tense
-      )
-    });
-    const keyword_value = text?.result_text || ''
-    setKeyword(keyword_value)
-  }
-
   return (
     <>
       {searchSelects.map(({ name, value, options, isDisabled }: any) => 
-            <SelectBox
-              name={name}
-              value={value}
-              options={options}
-              isDisabled={isDisabled}
-              handleOnchange={(e: any) => handleOnchange(name, e)}
-              key={name}
-            />
+        <SelectBox
+          name={name}
+          value={value}
+          options={options}
+          isDisabled={isDisabled}
+          handleOnchange={(e: any) => handleOnchange(name, e)}
+          key={name}
+        />
       )}
       <Button
-        to={keyword}
+        pathname="/result"
+        query={{
+          search: JSON.stringify({
+            subject,
+            verb,
+            tense
+          })
+        }}
         text="결과 보기"
-        handleOnclick={showResult}
       />
     </>
   )

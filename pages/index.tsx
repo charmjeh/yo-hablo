@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import Wrapper from '@/components/Wrapper';
-import InputContainer from '../components/InputContainer';
+import SearchContainer from '../components/index/SearchContainer';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = function () {
   return (
     <Wrapper>
       <div className={styles.card}>
-        <InputContainer />
+        <SearchContainer />
       </div>
     </Wrapper>
   );

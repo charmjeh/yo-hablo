@@ -48,22 +48,22 @@
     },
     {
       id: 2,
-      value: 'indicative-present',
+      value: 'indicative-preterite',
       text: '직설법 과거',
     },
     {
       id: 3,
-      value: 'indicative-present',
+      value: 'indicative-imperfect',
       text: '직설법 불완료 과거',
     },
     {
       id: 4,
-      value: 'indicative-present',
+      value: 'indicative-conditional',
       text: '직설법 가정 미래',
     },
     {
       id: 5,
-      value: 'indicative-present',
+      value: 'indicative-future',
       text: '직설법 미래',
     },
   ];
@@ -79,7 +79,7 @@ export const words = [
   {
     id: 2,
     result_text: 'tú hablas',
-    subject_value: 'tú',
+    subject_value: 'tu',
     verb_value: 'hablar',
     tense_value: 'indicative-present',
   },

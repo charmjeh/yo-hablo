@@ -1,5 +1,4 @@
 import styles from '../styles/Home.module.css';
-import Option from './Option';
 
 interface ParamProps {
   name: string;
@@ -20,12 +19,8 @@ const SelectBox = ({ name, options, isDisabled, handleOnchange }: ParamProps) =>
         disabled={isDisabled}
         onChange={handleOnchange}
       >
-        {options.map(({ id, value, text }: any) => 
-          <Option
-            key={id}
-            value={value}
-            text={text}
-          />
+        {options.map(({ value, text }: any) => 
+          <option key={value} value={value}>{text}</option>
         )}
       </select>
       <div className={styles['select-box__arrow']}></div>

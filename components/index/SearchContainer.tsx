@@ -52,15 +52,19 @@ const SearchContainer: FC = () => {
         />
       )}
       <Button
-        pathname="/result"
-        query={{
-          search: JSON.stringify({
-            subject,
-            verb,
-            tense
-          })
+        to={{
+          pathname: "/result",
+          query: {
+            search: JSON.stringify({
+              subject,
+              verb,
+              tense
+            })
+          }
         }}
-        text="결과 보기"
+        children="결과 보기"
+        backgroundColor="#4f9cf7"
+        borderRadius="3px"
       />
     </>
   )

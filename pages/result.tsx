@@ -4,14 +4,15 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router'
 import { words } from '../db.js';
 import styles from '../styles/Home.module.css';
+import Button from '@/components/Button';
 
 const Result: NextPage = function () {
   const router = useRouter()
   const [keyword, setKeyword] = useState('전달받은 값이 없습니다')
 
-  const getSearchedKeyword = () => {
+  useEffect(() => {
     const source: any = router.query.search
-    if (!source) return;
+    if (!_.size(source)) return;
 
     const {
       subject,
@@ -29,18 +30,24 @@ const Result: NextPage = function () {
         verb_value === verb &&
         tense_value === tense
       )
-    });
-
-    return searchedKeyword?.result_text;
-  }
-
-  useEffect(() => {
-    const text: string = getSearchedKeyword() || ''
+    })
+    const text = searchedKeyword?.result_text || '';
     setKeyword(text)
   }, [])
-
+  
   return (
     <div className={styles.container}>
+      <Button
+        to={{ pathname: '/' }}
+        children="뒤로가기"
+        position="fixed"
+        top="20px"
+        left="20px"
+        borderRadius="35px"
+        width="130px"
+        height="45px"
+        backgroundColor="black"
+      ></Button>
       <div className={styles.main}>
         <p className={styles.description}>
           검색 결과는 아래와 같습니다 

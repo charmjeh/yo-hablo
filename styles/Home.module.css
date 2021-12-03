@@ -108,14 +108,3 @@
   border-width: 5px 5px 0 5px;
   border-color: #999 transparent transparent transparent;
 }
-
-.button {
-  width: 100%;
-  margin-left: 10px;
-  border: 0;
-  border-radius: 4px;
-  background-color: #4f9cf7;
-  padding: 0 15px;
-  font-weight: bold;
-  color: white;
-}

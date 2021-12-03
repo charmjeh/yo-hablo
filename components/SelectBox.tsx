@@ -1,14 +1,14 @@
-import React from 'react';
 import styles from '../styles/Home.module.css';
-import Option from './Option';
 
 interface ParamProps {
   name: string;
+  value: string;
   options: any;
   isDisabled: boolean;
+  handleOnchange: any;
 }
 
-const SelectItems = ({ name, options, isDisabled }: ParamProps) => {
+const SelectBox = ({ name, options, isDisabled, handleOnchange }: ParamProps) => {
   return (
     <div className={styles['select-box']}>
       <select
@@ -17,13 +17,10 @@ const SelectItems = ({ name, options, isDisabled }: ParamProps) => {
         aria-label={name}
         className={styles['native-select']}
         disabled={isDisabled}
+        onChange={handleOnchange}
       >
         {options.map(({ value, text }: any) => 
-          <Option
-            key={value}
-            value={value}
-            text={text}
-          />
+          <option key={value} value={value}>{text}</option>
         )}
       </select>
       <div className={styles['select-box__arrow']}></div>
@@ -31,4 +28,4 @@ const SelectItems = ({ name, options, isDisabled }: ParamProps) => {
   )
 }
 
-export default SelectItems
+export default SelectBox

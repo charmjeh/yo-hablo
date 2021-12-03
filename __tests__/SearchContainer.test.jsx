@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import InputContainer from '../components/InputContainer'
+import SearchContainer from '../components/index/SearchContainer'
 
-describe('InputContainer', () => {
+describe('SearchContainer', () => {
   it('select box가 세 개 있어야 한다.', () => {
-    render(<InputContainer />)
+    render(<SearchContainer />)
 
     const subjectOptions = screen.getByLabelText('subject-select');
     const verbOptions = screen.getByLabelText('verb-select');

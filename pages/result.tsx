@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router'
 import { words } from '../db.js';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import Button from '@/components/Button';
 
 const Result: NextPage = function () {

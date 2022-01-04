@@ -34,6 +34,7 @@ const StyledButton = styled.button`
   padding: 0 15px;
   font-weight: bold;
   color: white;
+  position: static;
 
   ${(props: StyledButtonProp) => props.position && css`
     position: ${props.position};

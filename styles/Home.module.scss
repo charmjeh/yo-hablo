@@ -108,3 +108,11 @@
   border-width: 5px 5px 0 5px;
   border-color: #999 transparent transparent transparent;
 }
+
+// 다크 모드인 경우
+@media (prefers-color-scheme: dark) {
+	.container {
+		background-color: #1e1f21 !important;
+		color: #fff !important;
+	}
+}

@@ -3,10 +3,9 @@ import styled, { css } from "styled-components";
 interface ButtonProp {
   to?: any
   children: string;
-  backgroundColor: string;
 }
 
-interface StyledButtonProp {
+interface StyledButtonProp extends ButtonProp {
   width?: string;
   height?: string;
   backgroundColor?: string;
@@ -44,7 +43,7 @@ const StyledButton = styled.button`
   `}
 `
 
-const Button = ({ to, children, ...rest }: ButtonProp) =>
+const Button = ({ to, children, ...rest }: StyledButtonProp) =>
   to ? (
     <Link href={to}>
       <StyledButton {...rest}>
